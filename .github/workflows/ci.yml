@@ -21,18 +21,18 @@ jobs:
       - name: Run tests
         run: go test -cover ./...
 
-    style:
-      name: Style
-      run-on: ubuntu-latest
+  style:
+    name: Style
+    run-on: ubuntu-latest
 
-      steps:
-        - name: Check out code
-          uses: actions/checkout@v6
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v6
 
-        - name: Set up Go
-          uses: actions/setup-go@v6
-          with:
-            go-version: "1.27.1"
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: "1.27.1"
 
-        - name: Check formatting
-          run: test -z $(go fmt ./...)
+      - name: Check formatting
+        run: test -z $(go fmt ./...)
